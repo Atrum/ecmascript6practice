@@ -241,12 +241,15 @@ var _employees = __webpack_require__(1);
 
 var _employee = __webpack_require__(0);
 
-_employees.Employees.add(new _employee.Employee("Pancho", "Developer", 1299));
-_employees.Employees.add(new _employee.Employee("Lucho", "Manager", 1500));
-_employees.Employees.add(new _employee.Employee("Daniel", "Manager", 1300));
+_employees.Employees.add(new _employee.Employee("Pancho", "Developer", 1000));
+_employees.Employees.add(new _employee.Employee("Lucho", "Manager", 1200));
+_employees.Employees.add(new _employee.Employee("Daniel", "Developer", 1300));
 
 var employees = _employees.Employees.list();
 var html = "";
+
+// Task 2
+html += '<br> Average salary: ' + _employees.Employees.averageSalary() + ' <br>';
 
 var _iteratorNormalCompletion = true;
 var _didIteratorError = false;
@@ -256,6 +259,10 @@ try {
     var _loop = function _loop() {
         var e = _step.value;
 
+        // Task 1
+        html += e.getInfo() + "<br>";
+
+        // Task 3
         e.total().then(function (total) {
             html += e.name + ' total: ' + total + ' <br>';
             render();
@@ -279,8 +286,6 @@ try {
         }
     }
 }
-
-html += '<br> Average salary: ' + _employees.Employees.averageSalary() + ' <br>';
 
 function render() {
     document.getElementById("employees").innerHTML = html;
