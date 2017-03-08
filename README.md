@@ -1,5 +1,4 @@
-# ecmascript6practice
-Practice for  ECMAScript 2015
+# Practice for  ECMAScript 2015
 
 To install all dependencies:
 
