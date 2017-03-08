@@ -9,12 +9,20 @@ let employees = Employees.list();
 let html = ""
 
 for (let e of employees) {
+    // Task 1
+    for (let e of employees) {
+        html += e.getInfo() + "<br>"
+    }
+
+    // Task 2
+    html += `<br> Average salary: ${Employees.averageSalary()} <br>`
+
+    // Task 3
     e.total().then(total => {
         html += `${e.name} total: ${total} <br>`;
         render();
     });
 }
-html += `<br> Average salary: ${Employees.averageSalary()} <br>`
 
 function render() {
     document.getElementById("employees").innerHTML = html;
