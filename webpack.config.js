@@ -12,7 +12,11 @@ module.exports = {
                 exclude: /node-modules/,
                 loader: 'babel-loader',
                 query: {
-                    presets: ['es2015']
+                    presets: ['es2015'],
+                    plugins: [
+                        "syntax-async-functions"
+                    ]
+
                 }
             }
         ]
