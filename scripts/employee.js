@@ -17,7 +17,7 @@ export class Employee extends Person {
     bonus() {
         return new Promise(resolve =>
             setTimeout(() => resolve(Math.round(Math.random() * 1000))
-                , 1000))
+                , 3000))
     }
 
     total() {

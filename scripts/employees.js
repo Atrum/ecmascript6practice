@@ -1,3 +1,5 @@
+require("babel-polyfill");
+
 import { Employee } from './employee'
 
 let _employees = [];
@@ -26,6 +28,15 @@ export class Employees {
             _employees.map(e => e.salary).reduce((a, b) => a + b)
             / _employees.length)
     }
+
+    static *[Symbol.iterator]() {
+        yield* _employees;
+    }
+
+    static *names() {
+        yield* _employees.map(e => e.name);
+    }
+
 
 }
 
